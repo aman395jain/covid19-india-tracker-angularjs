@@ -1,0 +1,25 @@
+<total-cases total-cases-data="$ctrl.covidData[0]"></total-cases>
+
+<div class="covid-table">
+  <table id="covidTable">
+    <tr>
+      <th>State/UT</th>
+      <th>Confirmed Cases</th>
+      <th>Active Cases</th>
+      <th>Recovered</th>
+      <th>Deceased</th>
+      <th>Last Update</th>
+    </tr>
+    <tr
+      ng-repeat="covidNumber in $ctrl.covidData track by $index"
+      ng-if="$index >0"
+    >
+      <td>{{covidNumber.state}}</td>
+      <td>{{covidNumber.confirmed}}</td>
+      <td>{{covidNumber.active}}</td>
+      <td>{{covidNumber.recovered}}</td>
+      <td>{{covidNumber.deaths}}</td>
+      <td>{{covidNumber.lastupdatedtime}}</td>
+    </tr>
+  </table>
+</div>
