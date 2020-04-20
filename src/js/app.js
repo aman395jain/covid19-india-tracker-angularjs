@@ -12,6 +12,8 @@ import "./layout";
 import "./components";
 import "./home";
 import "./services";
+import "./directives";
+import "./filters";
 
 // Create and bootstrap application
 const requires = [
@@ -20,6 +22,8 @@ const requires = [
   "app.layout",
   "app.components",
   "app.home",
+  "app.directive",
+  "app.filter",
   "app.services",
 ];
 

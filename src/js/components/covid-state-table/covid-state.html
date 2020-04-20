@@ -1,25 +1,49 @@
 <total-cases total-cases-data="$ctrl.covidData[0]"></total-cases>
-
 <div class="covid-table">
   <table id="covidTable">
-    <tr>
-      <th>State/UT</th>
-      <th>Confirmed Cases</th>
-      <th>Active Cases</th>
-      <th>Recovered</th>
-      <th>Deceased</th>
-      <th>Last Update</th>
+    <tr style="border-bottom: solid 1px grey;">
+      <th table-header-directive headname="State/UT" style="width: 17%;"></th>
+      <th
+        table-header-directive
+        headname="Confirmed Cases"
+        style="width: 17%;"
+        ng-click='$ctrl.reverseSorting("confirmed")'
+      ></th>
+      <th
+        table-header-directive
+        headname="Active Cases"
+        style="width: 17%;"
+        ng-click='$ctrl.reverseSorting("active")'
+      ></th>
+      <th
+        table-header-directive
+        headname="Recovered"
+        style="width: 17%;"
+        ng-click='$ctrl.reverseSorting("recovered")'
+      ></th>
+      <th
+        table-header-directive
+        headname="Deceased"
+        style="width: 17%;"
+        ng-click='$ctrl.reverseSorting("deaths")'
+      ></th>
+      <th
+        table-header-directive
+        headname="Last Update"
+        style="width: 17%;"
+      ></th>
     </tr>
     <tr
-      ng-repeat="covidNumber in $ctrl.covidData track by $index"
-      ng-if="$index >0"
+      ng-repeat="covidNumber in ($ctrl.covidData | orderBy: $ctrl.columnName:$ctrl.reverse) track by $index"
+      ng-if="$index > 0"
+      style="border-bottom: solid 1px grey;"
     >
-      <td>{{covidNumber.state}}</td>
-      <td>{{covidNumber.confirmed}}</td>
-      <td>{{covidNumber.active}}</td>
-      <td>{{covidNumber.recovered}}</td>
-      <td>{{covidNumber.deaths}}</td>
-      <td>{{covidNumber.lastupdatedtime}}</td>
+      <td style="width: 17%;">{{covidNumber.state}}</td>
+      <td style="width: 17%;">{{covidNumber.confirmed}}</td>
+      <td style="width: 17%;">{{covidNumber.active}}</td>
+      <td style="width: 17%;">{{covidNumber.recovered}}</td>
+      <td style="width: 17%;">{{covidNumber.deaths}}</td>
+      <td style="width: 17%;">{{covidNumber.lastupdatedtime}}</td>
     </tr>
   </table>
 </div>
