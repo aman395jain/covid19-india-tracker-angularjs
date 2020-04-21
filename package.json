@@ -1,8 +1,8 @@
 {
-  "name": "conduit-angularjs",
+  "name": "India-covid19-tracker",
   "version": "1.0.0",
-  "description": "Angular frontend for Conduit",
-  "author": "Thinkster",
+  "description": "",
+  "author": "Aman Jain",
   "license": "MIT",
   "dependencies": {
     "angular": "^1.5.0-rc.2",
