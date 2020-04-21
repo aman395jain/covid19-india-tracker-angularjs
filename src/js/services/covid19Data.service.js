@@ -1,16 +1,9 @@
-export default class Tags {
+export default class Covid19DataService {
   constructor(AppConstants, $http) {
     "ngInject";
 
     this._AppConstants = AppConstants;
     this._http = $http;
-  }
-
-  getAll() {
-    return this._http({
-      url: this._AppConstants.api + "/tags",
-      method: "GET",
-    }).then((res) => res.data.tags);
   }
 
   getCovidData() {

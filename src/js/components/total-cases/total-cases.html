@@ -1,7 +1,25 @@
-<div class="total-cases">
-  <div><span>Total Cases:</span>{{$ctrl.totalCasesData.confirmed}}</div>
-  <div><span>Total Active Cases:</span>{{$ctrl.totalCasesData.active}}</div>
-  <div><span>Total Recovered:</span>{{$ctrl.totalCasesData.recovered}}</div>
-  <div><span>Total Deceased:</span>{{$ctrl.totalCasesData.deaths}}</div>
-  <div><span>Last Update:</span>{{$ctrl.totalCasesData.lastupdatedtime}}</div>
+<div
+  class="total-cases"
+  style="margin-bottom: 20px; padding: 10px; display: flex;"
+>
+  <div style="width: 20%; color: #ff0000; text-align: center;">
+    <h5>Total Cases</h5>
+    <span>{{$ctrl.totalCasesData.confirmed}}</span>
+  </div>
+  <div style="width: 20%; color: #017cff; text-align: center;">
+    <h5>Total Active Cases</h5>
+    <span>{{$ctrl.totalCasesData.active}}</span>
+  </div>
+  <div style="width: 20%; color: #5cb85c; text-align: center;">
+    <h5>Total Recovered</h5>
+    <span>{{$ctrl.totalCasesData.recovered}}</span>
+  </div>
+  <div style="width: 20%; color: #6c757d; text-align: center;">
+    <h5>Total Deceased</h5>
+    <span>{{$ctrl.totalCasesData.deaths}}</span>
+  </div>
+  <div style="width: 20%; text-align: center;">
+    <h5>Last Update</h5>
+    {{$ctrl.totalCasesData.lastupdatedtime}}
+  </div>
 </div>

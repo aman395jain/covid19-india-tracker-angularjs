@@ -22,13 +22,13 @@ export default class TableHeaderDirective {
     // console.log("in directive in link", scope.ctrl);
     ele.addClass("header-color");
     if (scope.ctrl.headname === "Confirmed Cases") {
-      ele.css("color", "#FFBF00");
+      ele.css("color", "#ff0000");
     } else if (scope.ctrl.headname === "Active Cases") {
-      ele.css("color", "#87ceeb");
+      ele.css("color", "#017cff");
     } else if (scope.ctrl.headname === "Recovered") {
       ele.css("color", "#5cb85c");
     } else if (scope.ctrl.headname === "Deceased") {
-      ele.css("color", "#ff0000");
+      ele.css("color", "#6c757d");
     }
   }
 }
