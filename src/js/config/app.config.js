@@ -15,6 +15,11 @@ function AppConfig(
   $stateProvider.state("app", {
     abstract: true,
     templateUrl: "layout/app-view.html",
+    resolve: {
+      covidDataAPI: function (Covid19DataService) {
+        return Covid19DataService.getCovidData().then((data) => data);
+      },
+    },
   });
 
   $urlRouterProvider.otherwise("/");

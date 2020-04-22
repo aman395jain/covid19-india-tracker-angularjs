@@ -35,7 +35,5 @@ export default class TableHeaderDirective {
 
 // Directive's controller
 class TableHeaderDirectiveController {
-  constructor() {
-    this.name = "david";
-  }
+  constructor() {}
 }

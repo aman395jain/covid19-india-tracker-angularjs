@@ -1,6 +1,8 @@
 <nav class="navbar navbar-light" style="background-color: #f6f6f7;">
   <div class="container">
-    <a class="navbar-brand" ui-sref="app.home">Covid19-India-Tracker </a>
+    <a class="navbar-brand" ui-sref="app.home"
+      >Covid19-{{$ctrl.countryName}}-Tracker
+    </a>
 
     <!-- Show this for logged out users -->
     <ul show-authed="false" class="nav navbar-nav pull-xs-right">

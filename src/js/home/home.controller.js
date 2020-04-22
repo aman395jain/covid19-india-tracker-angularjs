@@ -1,19 +1,16 @@
 class HomeCtrl {
-  constructor(Covid19DataService, $scope) {
+  constructor($scope, $rootScope, covidDataAPI) {
     "ngInject";
 
     this.self = $scope;
 
-    // Get list of all tags
+    this.covidData = covidDataAPI.data.statewise;
 
-    Covid19DataService.getCovidData().then((res) => {
-      this.covidData = res.data.statewise;
-    });
+    console.log("dataNeeded---", covidDataAPI);
 
-    // Set current list to either feed or all, depending on auth status.
-    // this.listConfig = {
-    //   type: User.current ? "feed" : "all",
-    // };
+    this.self.$broadcast("myCustomEvent", "Data to send");
+
+    $rootScope.countryName = "India";
   }
 
   // changeList(newList) {

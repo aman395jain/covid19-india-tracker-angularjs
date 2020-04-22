@@ -1,7 +1,8 @@
 class AppHeaderCtrl {
-  constructor() {
+  constructor($rootScope) {
     "ngInject";
 
+    this.countryName = $rootScope.countryName;
   }
 }
 

@@ -8,4 +8,7 @@ directiveModule.directive(
   () => new TableHeaderDirective()
 );
 
+import DateFormatDirective from "./data-format.directive";
+directiveModule.directive("dateFormat", () => new DateFormatDirective());
+
 export default directiveModule;
