@@ -1,8 +1,7 @@
 class HomeCtrl {
-  constructor(Covid19DataService, AppConstants, $scope) {
+  constructor(Covid19DataService, $scope) {
     "ngInject";
 
-    this.appName = AppConstants.appName;
     this.self = $scope;
 
     // Get list of all tags

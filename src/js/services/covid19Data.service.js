@@ -1,8 +1,7 @@
 export default class Covid19DataService {
-  constructor(AppConstants, $http) {
+  constructor($http) {
     "ngInject";
 
-    this._AppConstants = AppConstants;
     this._http = $http;
   }
 
