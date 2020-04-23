@@ -58,7 +58,8 @@
       <tbody>
         <tr ng-repeat="covidNumber in ($ctrl.covidData | sortTable :$ctrl.columnName: $ctrl.reverse) track by $index"
           ng-if="covidNumber.state !== 'Total'" style="border-bottom: solid 1px grey;">
-          <td style="width: 17%;"><a ng-click="$ctrl.navigateState(covidNumber.state)">{{covidNumber.state}}</a></td>
+          <td style="width: 17%;"><a class="href-links"
+              ng-click="$ctrl.navigateState(covidNumber.state)">{{covidNumber.state}}</a></td>
           <td style="width: 17%;">{{covidNumber.confirmed}}</td>
           <td style="width: 17%;">{{covidNumber.active}}</td>
           <td style="width: 17%;">{{covidNumber.recovered}}</td>
