@@ -1,34 +1,27 @@
-<div
-  class="total-cases"
-  style="margin-bottom: 20px; padding: 10px; display: flex;"
->
-  <div style="width: 17%; color: #ff0000; text-align: center;">
+<div class="total-cases" style="margin-bottom: 20px; padding: 10px; display: flex;">
+  <div class="total-cases-header">
     <h5>Total Cases</h5>
     <span>{{$ctrl.totalCasesData.confirmed}}</span>
   </div>
-  <div style="width: 17%; color: #017cff; text-align: center;">
+  <div class="total-cases-header1">
     <h5>Total Active Cases</h5>
     <span>{{$ctrl.totalCasesData.active}}</span>
   </div>
-  <div style="width: 17%; color: #5cb85c; text-align: center;">
+  <div class="total-cases-header2">
     <h5>Total Recovered</h5>
     <span>{{$ctrl.totalCasesData.recovered}}</span>
   </div>
-  <div style="width: 17%; color: #6c757d; text-align: center;">
+  <div class="total-cases-header3">
     <h5>Total Deceased</h5>
     <span>{{$ctrl.totalCasesData.deaths}}</span>
   </div>
   <div style="width: 17%; text-align: center;">
     <h5>Last Update</h5>
-    <span
-      data-date-format
-      date-input="$ctrl.totalCasesData.lastupdatedtime"
-      locale-data="IST"
-    >
+    <span data-date-format date-input="$ctrl.totalCasesData.lastupdatedtime" locale-data="IST">
     </span>
   </div>
   <div style="width: 17%; text-align: center;">
-    <h5>Total States/UT</h5>
+    <h6>Total States/UT Affected</h6>
     {{$ctrl.statesAffected}}
   </div>
 </div>
