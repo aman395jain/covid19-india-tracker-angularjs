@@ -17,11 +17,13 @@
   </div>
   <div style="width: 17%; text-align: center;">
     <h5>Last Update</h5>
-    <span data-date-format date-input="$ctrl.totalCasesData.lastupdatedtime" locale-data="IST">
+    <span data-date-format date-input="$ctrl.totalCasesData.lastupdatedtime" locale-data="IST"
+      formatted-date='$ctrl.dateFn(data)'>
+      {{$ctrl.dateWithLocale}}
     </span>
   </div>
   <div style="width: 17%; text-align: center;">
-    <h6>Total States/UT Affected</h6>
+    <h6>States/UT Affected</h6>
     {{$ctrl.statesAffected}}
   </div>
 </div>

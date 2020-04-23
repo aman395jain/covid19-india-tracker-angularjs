@@ -1,98 +1,64 @@
 <div>
-  <total-cases
-    total-cases-data="$ctrl.covidData[0]"
-    states-affected="$ctrl.attectedStates"
-    change-hook="$ctrl.languageCode(value)"
-  ></total-cases>
+  <total-cases total-cases-data="$ctrl.covidData[0]" states-affected="$ctrl.affectedStates"
+    change-hook="$ctrl.languageCode(value)"></total-cases>
 </div>
 <div class="covid-table row">
   <div class="col-md-9">
     <table id="covidTable">
       <thead>
         <tr style="border-bottom: solid 1px grey;">
-          <th
-            table-header-directive
-            headname="State/UT"
-            style="
+          <th table-header-directive headname="State/UT" style="
               width: 17%;
               position: sticky;
               top: 0;
               z-index: 10;
               background-color: #f6f6f7;
-            "
-          ></th>
-          <th
-            table-header-directive
-            headname="Confirmed Cases"
-            style="
+            "></th>
+          <th table-header-directive headname="Confirmed Cases" style="
               width: 17%;
               cursor: pointer;
               position: sticky;
               top: 0;
               z-index: 10;
               background-color: #f6f6f7;
-            "
-            ng-click='$ctrl.reverseSorting("confirmed")'
-          ></th>
-          <th
-            table-header-directive
-            headname="Active Cases"
-            style="
+            " ng-click='$ctrl.reverseSorting("confirmed")'></th>
+          <th table-header-directive headname="Active Cases" style="
               width: 17%;
               cursor: pointer;
               position: sticky;
               top: 0;
               z-index: 10;
               background-color: #f6f6f7;
-            "
-            ng-click='$ctrl.reverseSorting("active")'
-          ></th>
-          <th
-            table-header-directive
-            headname="Recovered"
-            style="
+            " ng-click='$ctrl.reverseSorting("active")'></th>
+          <th table-header-directive headname="Recovered" style="
               width: 17%;
               cursor: pointer;
               position: sticky;
               top: 0;
               z-index: 10;
               background-color: #f6f6f7;
-            "
-            ng-click='$ctrl.reverseSorting("recovered")'
-          ></th>
-          <th
-            table-header-directive
-            headname="Deceased"
-            style="
+            " ng-click='$ctrl.reverseSorting("recovered")'></th>
+          <th table-header-directive headname="Deceased" style="
               width: 17%;
               cursor: pointer;
               position: sticky;
               top: 0;
               z-index: 10;
               background-color: #f6f6f7;
-            "
-            ng-click='$ctrl.reverseSorting("deaths")'
-          ></th>
-          <th
-            table-header-directive
-            headname="Last Update"
-            style="
+            " ng-click='$ctrl.reverseSorting("deaths")'></th>
+          <th table-header-directive headname="Last Update" style="
               width: 17%;
               position: sticky;
               top: 0;
               z-index: 10;
               background-color: #f6f6f7;
-            "
-          ></th>
+            "></th>
         </tr>
       </thead>
       <tbody>
-        <tr
-          ng-repeat="covidNumber in ($ctrl.covidData | sortTable :$ctrl.columnName: $ctrl.reverse) track by $index"
-          ng-if="covidNumber.state !== 'Total'"
-          style="border-bottom: solid 1px grey;"
-        >
-          <td style="width: 17%;">{{covidNumber.state}}</td>
+        <tr ng-repeat="covidNumber in ($ctrl.covidData | sortTable :$ctrl.columnName: $ctrl.reverse) track by $index"
+          ng-if="covidNumber.state !== 'Total'" style="border-bottom: solid 1px grey;">
+          <td style="width: 17%;"><a ng-click="$ctrl.navigateState(covidNumber.state)">{{covidNumber.state}}</a></td>
           <td style="width: 17%;">{{covidNumber.confirmed}}</td>
           <td style="width: 17%;">{{covidNumber.active}}</td>
           <td style="width: 17%;">{{covidNumber.recovered}}</td>

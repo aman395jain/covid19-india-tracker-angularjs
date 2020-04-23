@@ -7,6 +7,11 @@ function HomeConfig($stateProvider) {
     controllerAs: "$ctrl",
     templateUrl: "home/home.html",
     title: "Covid19-Tracker",
+    resolve: {
+      covidDataAPI: function (Covid19DataService) {
+        return Covid19DataService.getCovidData().then((data) => data);
+      },
+    },
   });
 }
 

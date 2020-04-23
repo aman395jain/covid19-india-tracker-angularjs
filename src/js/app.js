@@ -14,6 +14,7 @@ import "./home";
 import "./services";
 import "./directives";
 import "./filters";
+import './stateData';
 
 // Create and bootstrap application
 const requires = [
@@ -25,6 +26,7 @@ const requires = [
   "app.directive",
   "app.filter",
   "app.services",
+  "app.stateData"
 ];
 
 // Mount on window for testing

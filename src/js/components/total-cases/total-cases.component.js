@@ -1,6 +1,7 @@
 class TotalCasesComponentCtrl {
   constructor($scope) {
     "ngInject";
+    this.dateWithLocale;
   }
 
   $onInit() {
@@ -8,8 +9,9 @@ class TotalCasesComponentCtrl {
     this.changeHook({ value: "us-en" });
   }
 
-  localeFn(value) {
-    console.log("djdjjdjd", value);
+  dateFn(value) {
+    console.log("in the testFn---", value)
+    this.dateWithLocale = value;
   }
 }
 

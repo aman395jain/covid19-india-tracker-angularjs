@@ -1,10 +1,13 @@
 class CovidStateComponentCtrl {
-  constructor() {
+  constructor($state, StateTotalDataService) {
     "ngInject";
+    this.state = $state;
+    this._stateTotalDataService = StateTotalDataService;
+
     this.columnName;
     this.reverse = false;
     this.language = "";
-    this.attectedStates;
+    this.affectedStates;
   }
 
   $onInit() {
@@ -14,7 +17,18 @@ class CovidStateComponentCtrl {
         count = index + 1;
       }
     });
-    this.attectedStates = count;
+    this.affectedStates = count;
+  }
+
+  navigateState(stateName) {
+    let totalData;
+    angular.forEach(this.covidData, (stateData, index) => {
+      if (stateData.state === stateName) {
+        totalData = stateData;
+      }
+    });
+    this._stateTotalDataService.setTotalCases(totalData);
+    this.state.go("app.stateData", { stateName });
   }
 
   languageCode(value) {
