@@ -22,16 +22,14 @@ class HomeCtrl {
   }
 
   $onInit() {
-    let testData = this._covidDataAPI.data.statewise;
+    let covidDataDisplay = [];
 
-    let gggg = [];
-
-    angular.forEach(testData, (data, index) => {
+    angular.forEach(this._covidDataAPI.data.statewise, (data, index) => {
       data["territory"] = data.state;
-      gggg.push(data);
+      covidDataDisplay.push(data);
     });
 
-    this.covidData = gggg;
+    this.covidData = covidDataDisplay;
   }
 
   // changeList(newList) {
