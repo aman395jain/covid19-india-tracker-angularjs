@@ -14,12 +14,12 @@ export default class TableHeaderDirective {
 
   // Directive compile function
   //   compile(ele, scope) {
-  //     console.log("in directive in compile", scope.ctrl);
+  //     // console.log("in directive in compile", scope.ctrl);
   //   }
 
   // Directive link function
   link(scope, ele, attrs) {
-    // console.log("in directive in link", scope.ctrl);
+    // // console.log("in directive in link", scope.ctrl);
     ele.addClass("header-color");
     if (scope.ctrl.headname === "Confirmed Cases") {
       ele.css("color", "#ff0000");

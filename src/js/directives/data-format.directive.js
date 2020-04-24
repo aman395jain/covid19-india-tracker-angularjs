@@ -6,7 +6,7 @@ export default class DateFormatDirective {
     this.scope = {
       dateInput: "=",
       localeData: "@",
-      formattedDate: '&'
+      formattedDate: "&",
     };
     this.controller = DateFormatController;
     this.controllerAs = "dateCtrl";
@@ -18,70 +18,70 @@ export default class DateFormatDirective {
     // ele.css("color", "#373a3c");
     // ele.css('font-size', '14px')
     // ele.css('font-weight', '600')
-    ele.addClass('date-format')
-    console.log("linking foo", scope);
+    ele.addClass("date-format");
+    // console.log("linking foo", scope);
   }
 }
 
 class DateFormatController {
-  constructor() { }
+  constructor() {}
 
   $onInit() {
-    let dateValues = this.dateInput.split(' ')
-    let dateArray = dateValues[0].split('/')
-    let month = this.formatMonth(dateArray[1])
+    let dateValues = this.dateInput.split(" ");
+    let dateArray = dateValues[0].split("/");
+    let month = this.formatMonth(dateArray[1]);
 
-    let formatDate = dateArray[0] + ' ' + month
-    let formatTime = dateValues[1].split(':')[0] + ':' + dateValues[1].split(':')[1]
-    let formattedDate = formatDate + ', ' + formatTime;
+    let formatDate = dateArray[0] + " " + month;
+    let formatTime =
+      dateValues[1].split(":")[0] + ":" + dateValues[1].split(":")[1];
+    let formattedDate = formatDate + ", " + formatTime;
 
     this.dateInput = formattedDate + " " + this.localeData;
-    this.formattedDate({ data: this.dateInput })
+    this.formattedDate({ data: this.dateInput });
   }
 
   formatMonth(month) {
     let fMonth;
     switch (month) {
-      case '01':
-        fMonth = 'Jan'
+      case "01":
+        fMonth = "Jan";
         break;
-      case '02':
-        fMonth = 'feb'
+      case "02":
+        fMonth = "feb";
         break;
-      case '03':
-        fMonth = 'Mar'
+      case "03":
+        fMonth = "Mar";
         break;
-      case '04':
-        fMonth = 'Apr'
+      case "04":
+        fMonth = "Apr";
         break;
-      case '05':
-        fMonth = 'May'
+      case "05":
+        fMonth = "May";
         break;
-      case '06':
-        fMonth = 'Jun'
+      case "06":
+        fMonth = "Jun";
         break;
-      case '07':
-        fMonth = 'Jul'
+      case "07":
+        fMonth = "Jul";
         break;
-      case '08':
-        fMonth = 'Aug'
+      case "08":
+        fMonth = "Aug";
         break;
-      case '09':
-        fMonth = 'Sept'
+      case "09":
+        fMonth = "Sept";
         break;
-      case '10':
-        fMonth = 'Oct'
+      case "10":
+        fMonth = "Oct";
         break;
-      case '11':
-        fMonth = 'Nov'
+      case "11":
+        fMonth = "Nov";
         break;
-      case '12':
-        fMonth = 'Dec'
+      case "12":
+        fMonth = "Dec";
         break;
       default:
         fMonth = "No Month";
     }
     return fMonth;
   }
-
 }

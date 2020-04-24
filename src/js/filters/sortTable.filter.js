@@ -19,7 +19,7 @@ export default class SortTable {
     } else {
       sortArray = input;
     }
-    // console.log("testArray", testArray);
+    // // console.log("testArray", testArray);
     return sortArray;
   }
 

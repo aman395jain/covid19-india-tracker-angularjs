@@ -3,7 +3,6 @@ export default class StateWiseData {
     "ngInject";
 
     this._http = $http;
-    console.log("in state service");
   }
 
   getStateWiseData() {

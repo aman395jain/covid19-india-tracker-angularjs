@@ -13,14 +13,21 @@ class CovidStateComponentCtrl {
   $onInit() {
     let count = 0;
     angular.forEach(this.covidData, (stateData, index) => {
-      if (stateData.state !== "Total" && stateData.active > 0) {
-        count = index + 1;
+      if (
+        stateData.territory !== "Total" &&
+        stateData.territory !== "Unknown" &&
+        !(stateData.territory.indexOf("*") !== -1) &&
+        stateData.confirmed > 0
+      ) {
+        count = index;
       }
     });
+    console.log("in the comonent---", this.covidData);
+
     this.affectedStates = count;
   }
 
-  navigateState(stateName) {
+  navigateToStatesData(stateName) {
     let totalData;
     angular.forEach(this.covidData, (stateData, index) => {
       if (stateData.state === stateName) {
@@ -33,7 +40,7 @@ class CovidStateComponentCtrl {
 
   languageCode(value) {
     this.language = value;
-    console.log("languageCode===>>>", value);
+    // console.log("languageCode===>>>", value);
   }
 
   reverseSorting(value) {
@@ -47,7 +54,7 @@ class CovidStateComponentCtrl {
 }
 
 const StateTable = {
-  bindings: { covidData: "=" },
+  bindings: { covidData: "=", headerNames: "<" },
   controller: CovidStateComponentCtrl,
   templateUrl: "components/covid-state-table/covid-state.html",
 };

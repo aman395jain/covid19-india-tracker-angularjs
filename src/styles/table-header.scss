@@ -1,3 +1,17 @@
 .header-color {
   color: "#ff0000";
 }
+
+.covid-table-row {
+  border-bottom: solid 1px grey;
+  height: 50px;
+
+  .table-header {
+    width: 17%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #f6f6f7;
+    cursor: pointer;
+  }
+}

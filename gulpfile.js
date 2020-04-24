@@ -104,4 +104,5 @@ gulp.task("default", ["html", "browserify", "styles", "css"], function () {
   gulp.watch(viewFiles, ["views"]);
   gulp.watch(jsFiles, ["browserify"]);
   gulp.watch("src/style.scss", ["css"]);
+  gulp.watch("src/styles/*.scss", ["styles"]);
 });
